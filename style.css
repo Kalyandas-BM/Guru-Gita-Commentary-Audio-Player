@@ -1,0 +1,185 @@
+/* General styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container {
+  width: 90%;
+  max-width: 600px;
+  padding: 1rem
+}
+
+.player {
+  border-radius: 1rem 1rem 0 0;
+  background-color: rgb(14, 26, 45);
+}
+
+.verse-info {
+  background-color: rgb(14, 26, 45);
+}
+
+.verse-list {
+  background-color: rgb(27, 39, 58);
+}
+
+.img-wrapper {
+  height: 280px;
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.thumbnail {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 1rem;
+}
+
+/* Progress bar */
+.time-range {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.progress-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+#progressBar {
+  flex-grow: 1;
+}
+
+#progressBar::-webkit-slider-thumb {
+  background-color: #0084c6;
+  border-radius: 50%;
+}
+
+#progressBar {
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: #ddd;
+  height: 0.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Time labels */
+#currentTime, #duration {
+  font-size: 14px;
+  color: white;
+  font-family: 'Arial', sans-serif;
+}
+
+.controls {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.controls button {
+  font-size: 18px;
+  background: none;
+  border: none;
+  color: #ddd;
+  cursor: pointer;
+  padding: 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.controls div {
+  display: flex;
+}
+
+.controls button#playPause {
+  font-size: 28px;
+}
+
+.controls button#shuffle,
+.controls button#volumeButton {
+  font-size: 16px;
+}
+
+.controls button:hover {
+  color: #0084c6;
+}
+
+/* Volume Wrapper - To manage hover behavior */
+.volume-wrapper {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Volume Slider - Hidden by default */
+#volumeControl {
+  display: none;
+  width: 100px; /* Make it wide horizontally */
+  background-color: #ddd;
+  border-radius: 4px;
+  outline: none;
+  cursor: pointer;
+}
+
+/* Show the volume slider on hover */
+.volume-wrapper:hover #volumeControl {
+  display: inline-block;
+}
+
+#verseTitle {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0 0 0.5rem 0;
+  color: rgb(141, 179, 224);
+}
+
+#verseSubtitle {
+  font-size: 16px;
+  color: white;
+  margin: 0;
+}
+
+#verseList {
+  list-style-type: none;
+  padding: 0;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+#verseList li {
+  color: rgb(141, 179, 224);
+  padding: 0.5rem;
+  cursor: pointer;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+#verseList li:hover {
+  filter: brightness(1.4);
+}
+
+/* Mobile specific adjustments */
+@media (max-width: 768px) {
+  .container {
+    width: initial;
+    padding: 1rem
+  }
+
+  .player {
+    margin-top: 0;
+  }
+
+  .controls {
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Audio Player</title>
+  <link rel="stylesheet" href="style.css?sas">
+  <script src="https://kit.fontawesome.com/769ed4e7e3.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="container player">
+    <div class="img-wrapper">
+      <img id="thumbnail" src="https://bhaktimarga.cdn.mediactive-network.net/wp-content/uploads/2024/gurugita/img/1a.jpg" alt="Verse Thumbnail" class="thumbnail">
+    </div>
+    <audio id="audio" preload="metadata">
+      <source id="audioSource" src="" type="audio/mp3">
+      Your browser does not support the audio element.
+    </audio>
+    <div class="progress-container">
+      <div class="time-range">
+        <span id="currentTime">0:00</span> <span id="duration">0:00</span>
+      </div>
+      <input type="range" id="progressBar" min="0" value="0" step="0.1">
+    </div>
+    <div class="controls">
+      <div>
+        <button id="prev"><i class="fa-solid fa-backward"></i></button>
+        <button id="rewind"><i class="fa-solid fa-backward-step"></i></button>
+        <button id="playPause"><i class="fa-solid fa-circle-play"></i></button>
+        <button id="forward"><i class="fa-solid fa-forward-step"></i></button>
+        <button id="next"><i class="fa-solid fa-forward"></i></button>
+      </div>
+      <div>
+        <button id="shuffle"><i class="fa-solid fa-random"></i></button>
+        <!-- Volume Button and Hover Slider -->
+        <div class="volume-wrapper">
+          <button id="volumeButton"><i class="fa-solid fa-volume-up"></i></button>
+          <input type="range" id="volumeControl" min="0" max="1" step="0.1" value="1" orient="horizontal">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container verse-info">
+    <h2 id="verseTitle">Verse Title</h2>
+    <p id="verseSubtitle">Verse Subtitle</p>
+  </div>
+
+  <div class="container verse-list">
+    <ul id="verseList">
+      <!-- Verse list will be populated here -->
+    </ul>
+  </div>
+
+  <script src="player.js"></script>
+</body>
+</html>
